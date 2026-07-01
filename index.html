@@ -18,11 +18,7 @@
             --glow-high: rgba(140, 100, 180, 0.3);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             background: var(--bg);
@@ -47,161 +43,56 @@
             gap: 20px;
         }
 
-        .header {
-            text-align: center;
-        }
-        .header h1 {
-            font-size: 1.9rem;
-            font-weight: 300;
-            letter-spacing: 0.06em;
-            color: #e8e8f0;
-            margin-bottom: 4px;
-        }
-        .header .subtitle {
-            font-size: 0.85rem;
-            letter-spacing: 0.1em;
-            color: #8888a0;
-            text-transform: uppercase;
-        }
+        .header { text-align: center; }
+        .header h1 { font-size: 1.9rem; font-weight: 300; letter-spacing: 0.06em; color: #e8e8f0; margin-bottom: 4px; }
+        .header .subtitle { font-size: 0.85rem; letter-spacing: 0.1em; color: #8888a0; text-transform: uppercase; }
 
         .state-label {
-            font-size: 0.9rem;
-            letter-spacing: 0.08em;
-            color: #b0b0c8;
-            text-align: center;
-            min-height: 1.4em;
-            transition: color 3s ease, opacity 2s ease;
-            opacity: 0.8;
+            font-size: 0.9rem; letter-spacing: 0.08em; color: #b0b0c8; text-align: center;
+            min-height: 1.4em; transition: color 3s ease, opacity 2s ease; opacity: 0.8;
         }
 
         .visualizer-wrap {
-            position: relative;
-            width: 100%;
-            aspect-ratio: 2 / 1;
-            max-height: 400px;
-            border-radius: 20px;
-            overflow: hidden;
-            background: var(--surface);
+            position: relative; width: 100%; aspect-ratio: 2 / 1; max-height: 400px;
+            border-radius: 20px; overflow: hidden; background: var(--surface);
             box-shadow: 0 0 60px rgba(0, 0, 0, 0.5), inset 0 0 80px rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(255, 255, 255, 0.06);
         }
-        canvas {
-            display: block;
-            width: 100%;
-            height: 100%;
-        }
+        canvas { display: block; width: 100%; height: 100%; }
 
-        .controls {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-        }
+        .controls { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; align-items: center; width: 100%; }
 
         .btn {
-            padding: 12px 28px;
-            border-radius: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            background: rgba(255, 255, 255, 0.04);
-            color: #d0d0e0;
-            cursor: pointer;
-            font-size: 1rem;
-            letter-spacing: 0.05em;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(6px);
-            font-family: inherit;
-            white-space: nowrap;
+            padding: 12px 28px; border-radius: 30px; border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.04); color: #d0d0e0; cursor: pointer;
+            font-size: 1rem; letter-spacing: 0.05em; transition: all 0.3s ease;
+            backdrop-filter: blur(6px); font-family: inherit; white-space: nowrap;
         }
-        .btn:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.4);
-            box-shadow: 0 0 25px rgba(150, 150, 200, 0.2);
-        }
-        .btn.primary {
-            background: rgba(200, 160, 80, 0.15);
-            border-color: rgba(200, 160, 80, 0.5);
-            color: #e8c878;
-            font-weight: 500;
-            font-size: 1.05rem;
-            padding: 13px 34px;
-        }
-        .btn.primary:hover {
-            background: rgba(200, 160, 80, 0.25);
-            box-shadow: 0 0 35px var(--glow-low);
-        }
-        .btn.primary.running {
-            background: rgba(200, 80, 70, 0.2);
-            border-color: rgba(200, 80, 70, 0.5);
-            color: #e89088;
-        }
-        .btn.primary.running:hover {
-            background: rgba(200, 80, 70, 0.3);
-            box-shadow: 0 0 35px rgba(200, 80, 70, 0.4);
-        }
-        .btn.preset {
-            font-size: 0.8rem;
-            padding: 8px 16px;
-            border-radius: 20px;
-            letter-spacing: 0.04em;
-        }
+        .btn:hover { background: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.4); box-shadow: 0 0 25px rgba(150, 150, 200, 0.2); }
+        
+        .btn.primary { background: rgba(200, 160, 80, 0.15); border-color: rgba(200, 160, 80, 0.5); color: #e8c878; font-weight: 500; font-size: 1.05rem; padding: 13px 34px; }
+        .btn.primary:hover { background: rgba(200, 160, 80, 0.25); box-shadow: 0 0 35px var(--glow-low); }
+        .btn.primary.running { background: rgba(200, 80, 70, 0.2); border-color: rgba(200, 80, 70, 0.5); color: #e89088; }
+        .btn.primary.running:hover { background: rgba(200, 80, 70, 0.3); box-shadow: 0 0 35px rgba(200, 80, 70, 0.4); }
+        
+        .btn.record { background: rgba(197, 85, 85, 0.15); border-color: rgba(197, 85, 85, 0.5); color: #e89088; }
+        .btn.record.recording { background: rgba(197, 85, 85, 0.4); animation: pulse 1.5s infinite; }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(197, 85, 85, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(197, 85, 85, 0); } 100% { box-shadow: 0 0 0 0 rgba(197, 85, 85, 0); } }
 
-        .slider-group {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 4px;
-            min-width: 80px;
-        }
-        .slider-group label {
-            font-size: 0.7rem;
-            letter-spacing: 0.06em;
-            color: #9999b0;
-            text-transform: uppercase;
-        }
-        .slider-group input[type="range"] {
-            -webkit-appearance: none;
-            width: 100%;
-            height: 4px;
-            border-radius: 2px;
-            background: rgba(255, 255, 255, 0.15);
-            outline: none;
-            cursor: pointer;
-        }
-        .slider-group input[type="range"]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            background: #c8c8e0;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            cursor: pointer;
-            box-shadow: 0 0 12px rgba(180, 180, 210, 0.4);
-        }
+        .btn.preset { font-size: 0.8rem; padding: 8px 16px; border-radius: 20px; letter-spacing: 0.04em; }
+
+        .slider-group { display: flex; flex-direction: column; align-items: center; gap: 4px; min-width: 80px; }
+        .slider-group label { font-size: 0.7rem; letter-spacing: 0.06em; color: #9999b0; text-transform: uppercase; }
+        .slider-group input[type="range"] { -webkit-appearance: none; width: 100%; height: 4px; border-radius: 2px; background: rgba(255, 255, 255, 0.15); outline: none; cursor: pointer; }
+        .slider-group input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; border-radius: 50%; background: #c8c8e0; border: 2px solid rgba(255, 255, 255, 0.3); cursor: pointer; box-shadow: 0 0 12px rgba(180, 180, 210, 0.4); }
 
         @media (max-width: 600px) {
-            .container {
-                padding: 12px;
-                gap: 14px;
-            }
-            .header h1 {
-                font-size: 1.4rem;
-            }
-            .btn {
-                padding: 10px 18px;
-                font-size: 0.85rem;
-            }
-            .btn.primary {
-                padding: 11px 22px;
-                font-size: 0.9rem;
-            }
-            .controls {
-                gap: 10px;
-            }
-            .slider-group {
-                min-width: 60px;
-            }
+            .container { padding: 12px; gap: 14px; }
+            .header h1 { font-size: 1.4rem; }
+            .btn { padding: 10px 18px; font-size: 0.85rem; }
+            .btn.primary { padding: 11px 22px; font-size: 0.9rem; }
+            .controls { gap: 10px; }
+            .slider-group { min-width: 60px; }
         }
     </style>
 </head>
@@ -220,6 +111,7 @@
 
         <div class="controls">
             <button class="btn primary" id="btnStart" title="Start / Stop the soundscape">▶ Begin</button>
+            <button class="btn record" id="btnRecord" title="Record Audio">⏺ Record</button>
             <button class="btn preset" data-preset="deep">🌊 Deep</button>
             <button class="btn preset" data-preset="wind">🌬️ Wind</button>
             <button class="btn preset" data-preset="crystal">💎 Crystal</button>
@@ -227,764 +119,503 @@
         </div>
 
         <div class="controls" style="flex-wrap:wrap;gap:20px;margin-top:4px;">
-            <div class="slider-group">
-                <label>Volume</label>
-                <input type="range" id="sliderVolume" min="0" max="100" value="60" step="1">
-            </div>
-            <div class="slider-group">
-                <label>Density</label>
-                <input type="range" id="sliderDensity" min="20" max="100" value="65" step="1">
-            </div>
-            <div class="slider-group">
-                <label>Movement</label>
-                <input type="range" id="sliderMovement" min="10" max="100" value="55" step="1">
-            </div>
-            <div class="slider-group">
-                <label>Reverb</label>
-                <input type="range" id="sliderReverb" min="5" max="80" value="35" step="1">
-            </div>
+            <div class="slider-group"><label>Volume</label><input type="range" id="sliderVolume" min="0" max="100" value="60" step="1"></div>
+            <div class="slider-group"><label>Density</label><input type="range" id="sliderDensity" min="20" max="100" value="65" step="1"></div>
+            <div class="slider-group"><label>Movement</label><input type="range" id="sliderMovement" min="10" max="100" value="55" step="1"></div>
+            <div class="slider-group"><label>Reverb</label><input type="range" id="sliderReverb" min="5" max="80" value="35" step="1"></div>
         </div>
     </div>
 
     <script>
-        (function() {
-            // ─────────────────────────────────────
-            // DOM ELEMENTS
-            // ─────────────────────────────────────
-            const canvas = document.getElementById('visualizer');
-            const ctx = canvas.getContext('2d');
-            const btnStart = document.getElementById('btnStart');
-            const stateLabel = document.getElementById('stateLabel');
-            const sliderVolume = document.getElementById('sliderVolume');
-            const sliderDensity = document.getElementById('sliderDensity');
-            const sliderMovement = document.getElementById('sliderMovement');
-            const sliderReverb = document.getElementById('sliderReverb');
-            const presetButtons = document.querySelectorAll('.btn.preset');
+        class SoundscapeEngine {
+            constructor() {
+                this.ui = {
+                    canvas: document.getElementById('visualizer'),
+                    ctx: document.getElementById('visualizer').getContext('2d'),
+                    btnStart: document.getElementById('btnStart'),
+                    btnRecord: document.getElementById('btnRecord'),
+                    stateLabel: document.getElementById('stateLabel'),
+                    sliderVolume: document.getElementById('sliderVolume'),
+                    sliderDensity: document.getElementById('sliderDensity'),
+                    sliderMovement: document.getElementById('sliderMovement'),
+                    sliderReverb: document.getElementById('sliderReverb'),
+                    presetButtons: document.querySelectorAll('.btn.preset')
+                };
+
+                this.audioCtx = null;
+                this.isRunning = false;
+                this.isRecording = false;
+                this.mediaRecorder = null;
+                this.recordedChunks = [];
+                this.animFrameId = null;
+                this.eventTimeout = null;
+
+                // Parameter Targets
+                this.params = { volume: 0.6, density: 0.65, movement: 0.55, reverb: 0.35 };
+                this.smoothing = 0.04;
+                this.slowPhaseAccum = 0;
+                this.currentStateName = '';
+
+                this.nodes = {}; // Store references to audio nodes for manipulation
+
+                this.init();
+            }
+
+            init() {
+                this.setupEventListeners();
+                this.resizeCanvas();
+                this.drawIdleVisual();
+                console.log('🌊 Soundscape Generator ready.');
+            }
+
+            setupEventListeners() {
+                this.ui.btnStart.addEventListener('click', () => this.toggleEngine());
+                this.ui.btnRecord.addEventListener('click', () => this.toggleRecording());
+
+                // Native Web Audio Smoothing via setTargetAtTime
+                const bindSlider = (slider, paramKey, nodePath) => {
+                    slider.addEventListener('input', () => {
+                        this.params[paramKey] = parseInt(slider.value) / 100;
+                        if (this.isRunning) this.applyParameters();
+                    });
+                };
+
+                bindSlider(this.ui.sliderVolume, 'volume');
+                bindSlider(this.ui.sliderDensity, 'density');
+                bindSlider(this.ui.sliderMovement, 'movement');
+                bindSlider(this.ui.sliderReverb, 'reverb');
+
+                this.ui.presetButtons.forEach(btn => {
+                    btn.addEventListener('click', () => this.applyPreset(btn.dataset.preset));
+                });
+
+                document.addEventListener('keydown', (e) => {
+                    if (e.code === 'Space' && e.target === document.body) { e.preventDefault(); this.toggleEngine(); }
+                    if (e.code === 'KeyD') this.applyPreset('deep');
+                    if (e.code === 'KeyW') this.applyPreset('wind');
+                    if (e.code === 'KeyC') this.applyPreset('crystal');
+                    if (e.code === 'KeyE') this.applyPreset('experimental');
+                });
+
+                window.addEventListener('resize', () => {
+                    this.resizeCanvas();
+                    if (!this.isRunning) this.drawIdleVisual();
+                });
+            }
 
             // ─────────────────────────────────────
-            // AUDIO ENGINE STATE
+            // AUDIO GENERATION
             // ─────────────────────────────────────
-            let audioCtx = null;
-            let isRunning = false;
-            let analyser = null;
-            let analyserData = null;
-            let animationId = null;
-
-            // Nodes that need cleanup
-            let activeNodes = [];
-            let lfoOscillators = [];
-            let noiseSources = [];
-            let reverbNodes = [];
-            let masterGain = null;
-            let reverbGain = null;
-
-            // Parameter targets (smoothed)
-            let targetVolume = 0.6;
-            let targetDensity = 0.65;
-            let targetMovement = 0.55;
-            let targetReverb = 0.35;
-            let currentVolume = 0.6;
-            let currentDensity = 0.65;
-            let currentMovement = 0.55;
-            let currentReverb = 0.35;
-
-            // Slow state tracking for label
-            let slowPhaseAccum = 0;
-            let currentStateName = '';
-
-            // ─────────────────────────────────────
-            // NOISE BUFFER CREATION
-            // ─────────────────────────────────────
-            function createNoiseBuffer(ctx, durationSec) {
+            createNoiseBuffer(ctx, durationSec, type = 'white') {
                 const sampleRate = ctx.sampleRate;
                 const length = Math.floor(sampleRate * durationSec);
                 const buffer = ctx.createBuffer(1, length, sampleRate);
                 const data = buffer.getChannelData(0);
-                for (let i = 0; i < length; i++) {
-                    data[i] = (Math.random() * 2) - 1;
+
+                if (type === 'brown') {
+                    let lastOut = 0.0;
+                    for (let i = 0; i < length; i++) {
+                        const white = Math.random() * 2 - 1;
+                        data[i] = (lastOut + (0.02 * white)) / 1.02;
+                        lastOut = data[i];
+                        data[i] *= 3.5; // Boost
+                    }
+                } else {
+                    for (let i = 0; i < length; i++) data[i] = Math.random() * 2 - 1;
                 }
                 return buffer;
             }
 
-            // ─────────────────────────────────────
-            // CREATE REVERB (Schroeder-style)
-            // ─────────────────────────────────────
-            function createReverb(ctx) {
-                const delays = [0.0297, 0.0371, 0.0433, 0.0519]; // prime-related ms in seconds
-                const feedbacks = [0.62, 0.58, 0.55, 0.50];
+            createReverb(ctx) {
+                // Improved delays for actual reverb tail (50ms - 110ms range)
+                const delays = [0.053, 0.071, 0.097, 0.113]; 
+                const feedbacks = [0.65, 0.60, 0.58, 0.55];
                 const dampFreqs = [4000, 3500, 3000, 2800];
 
-                const inputGain = ctx.createGain();
-                inputGain.gain.value = 0.7;
+                const inputGain = ctx.createGain(); inputGain.gain.value = 0.7;
+                const outputGain = ctx.createGain(); outputGain.gain.value = 1.0;
+                const merger = ctx.createGain(); merger.gain.value = 0.25;
 
-                const outputGain = ctx.createGain();
-                outputGain.gain.value = 1.0;
-
-                const merger = ctx.createGain();
-                merger.gain.value = 0.25;
-
-                const allDelayNodes = [];
-                const allFeedbackGains = [];
-                const allDampFilters = [];
+                // Master Lowpass to tame metallic ringing
+                const masterLPF = ctx.createBiquadFilter();
+                masterLPF.type = 'lowpass'; masterLPF.frequency.value = 6500; masterLPF.Q.value = 0.7;
 
                 for (let i = 0; i < delays.length; i++) {
                     const delayNode = ctx.createDelay(delays[i] + 0.01);
                     delayNode.delayTime.value = delays[i];
-
-                    const feedbackGain = ctx.createGain();
-                    feedbackGain.gain.value = feedbacks[i];
-
+                    const feedbackGain = ctx.createGain(); feedbackGain.gain.value = feedbacks[i];
                     const dampFilter = ctx.createBiquadFilter();
-                    dampFilter.type = 'lowpass';
-                    dampFilter.frequency.value = dampFreqs[i];
-                    dampFilter.Q.value = 0.5;
+                    dampFilter.type = 'lowpass'; dampFilter.frequency.value = dampFreqs[i]; dampFilter.Q.value = 0.5;
 
-                    // Feedback loop: delay → damp → feedback → back to delay
                     delayNode.connect(dampFilter);
                     dampFilter.connect(feedbackGain);
                     feedbackGain.connect(delayNode);
-
-                    // Output from the delay
                     delayNode.connect(merger);
-
-                    allDelayNodes.push(delayNode);
-                    allFeedbackGains.push(feedbackGain);
-                    allDampFilters.push(dampFilter);
+                    inputGain.connect(delayNode);
                 }
 
-                inputGain.connect(merger);
-                // Send input to all delay loops
-                for (const dn of allDelayNodes) {
-                    inputGain.connect(dn);
-                }
+                merger.connect(masterLPF);
+                masterLPF.connect(outputGain);
 
-                merger.connect(outputGain);
-
-                return {
-                    input: inputGain,
-                    output: outputGain,
-                    merger: merger,
-                    delayNodes: allDelayNodes,
-                    feedbackGains: allFeedbackGains,
-                    dampFilters: allDampFilters,
-                    cleanup: () => {
-                        inputGain.disconnect();
-                        outputGain.disconnect();
-                        merger.disconnect();
-                        for (const dn of allDelayNodes) dn.disconnect();
-                        for (const fg of allFeedbackGains) fg.disconnect();
-                        for (const df of allDampFilters) df.disconnect();
-                    }
-                };
+                return { input: inputGain, output: outputGain };
             }
 
-            // ─────────────────────────────────────
-            // BUILD THE FULL AUDIO GRAPH
-            // ─────────────────────────────────────
-            function buildAudioGraph(ctx) {
-                const nodes = [];
-                const lfos = [];
-                const sources = [];
-                let rev = null;
-                let mGain = null;
-                let rGain = null;
+            buildAudioGraph(ctx) {
+                const nodes = {};
+                // Prime durations for non-repeating loops
+                const buf1 = this.createNoiseBuffer(ctx, 7.31, 'brown'); // Brown noise for deep rumble
+                const buf2 = this.createNoiseBuffer(ctx, 11.17, 'white');
+                const buf3 = this.createNoiseBuffer(ctx, 13.43, 'white');
 
-                // Create noise buffers with prime-related durations
-                const buffer1 = createNoiseBuffer(ctx, 7.31); // ~7.3s
-                const buffer2 = createNoiseBuffer(ctx, 11.17); // ~11.2s
-                const buffer3 = createNoiseBuffer(ctx, 13.43); // ~13.4s
-                // LCM of 7.31, 11.17, 13.43 is huge — pattern won't repeat for hours
+                // ── Layer 1: Deep (Brown) ──
+                nodes.src1 = ctx.createBufferSource(); nodes.src1.buffer = buf1; nodes.src1.loop = true;
+                nodes.gain1 = ctx.createGain(); nodes.gain1.gain.value = 0.55;
+                nodes.lp1 = ctx.createBiquadFilter(); nodes.lp1.type = 'lowpass'; nodes.lp1.frequency.value = 160; nodes.lp1.Q.value = 0.45;
+                
+                nodes.src1.connect(nodes.gain1).connect(nodes.lp1);
 
-                // ── Layer 1: Deep Rumble (Brown-ish via heavy lowpass) ──
-                const src1 = ctx.createBufferSource();
-                src1.buffer = buffer1;
-                src1.loop = true;
-                const gain1a = ctx.createGain();
-                gain1a.gain.value = 0.55;
-                const lpFilter1 = ctx.createBiquadFilter();
-                lpFilter1.type = 'lowpass';
-                lpFilter1.frequency.value = 160;
-                lpFilter1.Q.value = 0.45;
-                const gain1b = ctx.createGain();
-                gain1b.gain.value = 0.40;
+                // ── Layer 2: Mid ──
+                nodes.src2 = ctx.createBufferSource(); nodes.src2.buffer = buf2; nodes.src2.loop = true;
+                nodes.gain2 = ctx.createGain(); nodes.gain2.gain.value = 0.50;
+                nodes.bp2 = ctx.createBiquadFilter(); nodes.bp2.type = 'bandpass'; nodes.bp2.frequency.value = 1100; nodes.bp2.Q.value = 2.2;
+                
+                nodes.src2.connect(nodes.gain2).connect(nodes.bp2);
 
-                src1.connect(gain1a);
-                gain1a.connect(lpFilter1);
-                lpFilter1.connect(gain1b);
+                // ── Layer 3: Air ──
+                nodes.src3 = ctx.createBufferSource(); nodes.src3.buffer = buf3; nodes.src3.loop = true;
+                nodes.gain3 = ctx.createGain(); nodes.gain3.gain.value = 0.40;
+                nodes.hp3 = ctx.createBiquadFilter(); nodes.hp3.type = 'highpass'; nodes.hp3.frequency.value = 4200; nodes.hp3.Q.value = 0.6;
+                
+                nodes.src3.connect(nodes.gain3).connect(nodes.hp3);
 
-                sources.push(src1);
-                nodes.push(gain1a, lpFilter1, gain1b);
+                // ── LFOs (Irrational Frequencies) ──
+                const createLFO = (freq, depth, target) => {
+                    const lfo = ctx.createOscillator(); lfo.type = 'sine'; lfo.frequency.value = freq;
+                    const lfoGain = ctx.createGain(); lfoGain.gain.value = depth;
+                    lfo.connect(lfoGain).connect(target);
+                    lfo.start(0);
+                    return { osc: lfo, gain: lfoGain };
+                };
 
-                // LFO for Layer 1 filter cutoff
-                const lfo1 = ctx.createOscillator();
-                lfo1.type = 'sine';
-                lfo1.frequency.value = 0.027; // ~37 second cycle
-                const lfo1Gain = ctx.createGain();
-                lfo1Gain.gain.value = 65; // ±65Hz modulation
-                lfo1.connect(lfo1Gain);
-                lfo1Gain.connect(lpFilter1.frequency);
-                lfos.push(lfo1);
-                nodes.push(lfo1Gain);
+                nodes.lfo1 = createLFO(0.027, 65, nodes.lp1.frequency);
+                nodes.lfo2 = createLFO(0.041, 450, nodes.bp2.frequency);
+                nodes.lfo3 = createLFO(0.059, 1800, nodes.hp3.frequency);
+                
+                // Amp Mod / Tremolo
+                nodes.lfoAmp1 = createLFO(0.033, 0.12, nodes.gain1.gain);
+                nodes.lfoQ2 = createLFO(0.073, 0.9, nodes.bp2.Q);
+                nodes.lfoTrem3 = createLFO(0.11, 0.06, nodes.gain3.gain);
 
-                // Slow amplitude modulation on Layer 1
-                const lfo1b = ctx.createOscillator();
-                lfo1b.type = 'triangle';
-                lfo1b.frequency.value = 0.033;
-                const lfo1bGain = ctx.createGain();
-                lfo1bGain.gain.value = 0.12;
-                lfo1b.connect(lfo1bGain);
-                lfo1bGain.connect(gain1b.gain);
-                lfos.push(lfo1b);
-                nodes.push(lfo1bGain);
+                // ── Routing & Panning ──
+                nodes.pan1 = ctx.createStereoPanner(); nodes.pan1.pan.value = -0.15;
+                nodes.pan2 = ctx.createStereoPanner(); nodes.pan2.pan.value = 0.10;
+                nodes.pan3 = ctx.createStereoPanner(); nodes.pan3.pan.value = 0.20;
 
-                // ── Layer 2: Mid Texture (Bandpass) ──
-                const src2 = ctx.createBufferSource();
-                src2.buffer = buffer2;
-                src2.loop = true;
-                const gain2a = ctx.createGain();
-                gain2a.gain.value = 0.50;
-                const bpFilter2 = ctx.createBiquadFilter();
-                bpFilter2.type = 'bandpass';
-                bpFilter2.frequency.value = 1100;
-                bpFilter2.Q.value = 2.2;
-                const gain2b = ctx.createGain();
-                gain2b.gain.value = 0.28;
-
-                src2.connect(gain2a);
-                gain2a.connect(bpFilter2);
-                bpFilter2.connect(gain2b);
-
-                sources.push(src2);
-                nodes.push(gain2a, bpFilter2, gain2b);
-
-                // LFO for Layer 2 filter frequency
-                const lfo2 = ctx.createOscillator();
-                lfo2.type = 'sine';
-                lfo2.frequency.value = 0.041;
-                const lfo2Gain = ctx.createGain();
-                lfo2Gain.gain.value = 450;
-                lfo2.connect(lfo2Gain);
-                lfo2Gain.connect(bpFilter2.frequency);
-                lfos.push(lfo2);
-                nodes.push(lfo2Gain);
-
-                // LFO for Layer 2 Q
-                const lfo2q = ctx.createOscillator();
-                lfo2q.type = 'sine';
-                lfo2q.frequency.value = 0.073;
-                const lfo2qGain = ctx.createGain();
-                lfo2qGain.gain.value = 0.9;
-                lfo2q.connect(lfo2qGain);
-                lfo2qGain.connect(bpFilter2.Q);
-                lfos.push(lfo2q);
-                nodes.push(lfo2qGain);
-
-                // ── Layer 3: Air / Sparkle (Highpass) ──
-                const src3 = ctx.createBufferSource();
-                src3.buffer = buffer3;
-                src3.loop = true;
-                const gain3a = ctx.createGain();
-                gain3a.gain.value = 0.40;
-                const hpFilter3 = ctx.createBiquadFilter();
-                hpFilter3.type = 'highpass';
-                hpFilter3.frequency.value = 4200;
-                hpFilter3.Q.value = 0.6;
-                const gain3b = ctx.createGain();
-                gain3b.gain.value = 0.18;
-
-                src3.connect(gain3a);
-                gain3a.connect(hpFilter3);
-                hpFilter3.connect(gain3b);
-
-                sources.push(src3);
-                nodes.push(gain3a, hpFilter3, gain3b);
-
-                // LFO for Layer 3 filter frequency
-                const lfo3 = ctx.createOscillator();
-                lfo3.type = 'sine';
-                lfo3.frequency.value = 0.059;
-                const lfo3Gain = ctx.createGain();
-                lfo3Gain.gain.value = 1800;
-                lfo3.connect(lfo3Gain);
-                lfo3Gain.connect(hpFilter3.frequency);
-                lfos.push(lfo3);
-                nodes.push(lfo3Gain);
-
-                // Tremolo on Layer 3
-                const lfo3b = ctx.createOscillator();
-                lfo3b.type = 'sine';
-                lfo3b.frequency.value = 0.11;
-                const lfo3bGain = ctx.createGain();
-                lfo3bGain.gain.value = 0.06;
-                lfo3b.connect(lfo3bGain);
-                lfo3bGain.connect(gain3b.gain);
-                lfos.push(lfo3b);
-                nodes.push(lfo3bGain);
-
-                // ── Panning for stereo width ──
-                const panner1 = ctx.createStereoPanner();
-                panner1.pan.value = -0.15;
-                const panner2 = ctx.createStereoPanner();
-                panner2.pan.value = 0.10;
-                const panner3 = ctx.createStereoPanner();
-                panner3.pan.value = 0.20;
-
-                gain1b.connect(panner1);
-                gain2b.connect(panner2);
-                gain3b.connect(panner3);
-                nodes.push(panner1, panner2, panner3);
+                nodes.lp1.connect(nodes.pan1);
+                nodes.bp2.connect(nodes.pan2);
+                nodes.hp3.connect(nodes.pan3);
 
                 // ── Reverb ──
-                rev = createReverb(ctx);
-                reverbNodes = [rev];
-                rGain = ctx.createGain();
-                rGain.gain.value = 0.30;
-                rev.output.connect(rGain);
+                nodes.reverb = this.createReverb(ctx);
+                nodes.reverbGain = ctx.createGain(); nodes.reverbGain.gain.value = 0.30;
+                nodes.reverb.output.connect(nodes.reverbGain);
 
-                // Send to reverb from each layer
-                const send1 = ctx.createGain();
-                send1.gain.value = 0.35;
-                const send2 = ctx.createGain();
-                send2.gain.value = 0.45;
-                const send3 = ctx.createGain();
-                send3.gain.value = 0.50;
-                gain1b.connect(send1);
-                gain2b.connect(send2);
-                gain3b.connect(send3);
-                send1.connect(rev.input);
-                send2.connect(rev.input);
-                send3.connect(rev.input);
-                nodes.push(send1, send2, send3);
+                nodes.send1 = ctx.createGain(); nodes.send1.gain.value = 0.35;
+                nodes.send2 = ctx.createGain(); nodes.send2.gain.value = 0.45;
+                nodes.send3 = ctx.createGain(); nodes.send3.gain.value = 0.50;
+                
+                nodes.pan1.connect(nodes.send1).connect(nodes.reverb.input);
+                nodes.pan2.connect(nodes.send2).connect(nodes.reverb.input);
+                nodes.pan3.connect(nodes.send3).connect(nodes.reverb.input);
 
-                // ── Dry mix ──
-                const dryMix = ctx.createGain();
-                dryMix.gain.value = 0.85;
-                panner1.connect(dryMix);
-                panner2.connect(dryMix);
-                panner3.connect(dryMix);
-                nodes.push(dryMix);
+                // ── Master Mix ──
+                nodes.dryMix = ctx.createGain(); nodes.dryMix.gain.value = 0.85;
+                nodes.pan1.connect(nodes.dryMix); nodes.pan2.connect(nodes.dryMix); nodes.pan3.connect(nodes.dryMix);
 
-                // ── Master ──
-                mGain = ctx.createGain();
-                mGain.gain.value = 0.55;
-                dryMix.connect(mGain);
-                rGain.connect(mGain);
-                nodes.push(mGain);
+                nodes.masterGain = ctx.createGain(); nodes.masterGain.gain.value = 0.0; // Start silent for fade-in
+                nodes.dryMix.connect(nodes.masterGain);
+                nodes.reverbGain.connect(nodes.masterGain);
+
+                // ── Master LFO (Multi-minute swell) ──
+                nodes.masterLfo = createLFO(0.0056, 0.10, nodes.masterGain.gain);
 
                 // ── Analyser ──
-                const analyserNode = ctx.createAnalyser();
-                analyserNode.fftSize = 2048;
-                analyserNode.smoothingTimeConstant = 0.82;
-                analyserNode.minDecibels = -90;
-                analyserNode.maxDecibels = -10;
-                mGain.connect(analyserNode);
-                nodes.push(analyserNode);
+                nodes.analyser = ctx.createAnalyser();
+                nodes.analyser.fftSize = 2048; nodes.analyser.smoothingTimeConstant = 0.82;
+                nodes.masterGain.connect(nodes.analyser);
+                nodes.analyser.connect(ctx.destination);
 
-                // Analyser → destination
-                analyserNode.connect(ctx.destination);
+                // Start Sources
+                nodes.src1.start(0); nodes.src2.start(0); nodes.src3.start(0);
 
-                // ── Very slow master LFO (multi-minute cycle) ──
-                const masterLfo = ctx.createOscillator();
-                masterLfo.type = 'sine';
-                masterLfo.frequency.value = 0.0056; // ~3 minute cycle
-                const masterLfoGain = ctx.createGain();
-                masterLfoGain.gain.value = 0.10;
-                masterLfo.connect(masterLfoGain);
-                masterLfoGain.connect(mGain.gain);
-                lfos.push(masterLfo);
-                nodes.push(masterLfoGain);
-
-                return {
-                    sources,
-                    lfos,
-                    nodes,
-                    reverb: rev,
-                    rGain,
-                    masterGain: mGain,
-                    analyser: analyserNode,
-                    layerGains: [gain1b, gain2b, gain3b],
-                    layerFilters: [lpFilter1, bpFilter2, hpFilter3],
-                    lfoGains: [lfo1Gain, lfo2Gain, lfo3Gain, lfo1bGain, lfo2qGain, lfo3bGain, masterLfoGain],
-                    sendGains: [send1, send2, send3],
-                    dryMix,
-                };
+                return nodes;
             }
 
             // ─────────────────────────────────────
-            // START / STOP
+            // ENGINE CONTROL
             // ─────────────────────────────────────
-            function startEngine() {
-                if (isRunning) return;
-
-                // Create or resume AudioContext
-                if (!audioCtx) {
-                    audioCtx = new(window.AudioContext || window.webkitAudioContext)();
-                }
-                if (audioCtx.state === 'suspended') {
-                    audioCtx.resume();
-                }
-
-                const graph = buildAudioGraph(audioCtx);
-                activeNodes = graph.nodes;
-                lfoOscillators = graph.lfos;
-                noiseSources = graph.sources;
-                reverbNodes = graph.reverb ? [graph.reverb] : [];
-                masterGain = graph.masterGain;
-                reverbGain = graph.rGain;
-                analyser = graph.analyser;
-                analyserData = new Float32Array(analyser.frequencyBinCount);
-
-                // Store layer references for dynamic control
-                window._soundscapeLayerGains = graph.layerGains;
-                window._soundscapeLayerFilters = graph.layerFilters;
-                window._soundscapeLfoGains = graph.lfoGains;
-                window._soundscapeSendGains = graph.sendGains;
-                window._soundscapeDryMix = graph.dryMix;
-                window._soundscapeReverbGain = graph.rGain;
-                window._soundscapeMasterGain = graph.masterGain;
-
-                // Start all sources
-                for (const src of graph.sources) {
-                    src.start(0);
-                }
-                // Start all LFOs
-                for (const lfo of graph.lfos) {
-                    lfo.start(0);
-                }
-
-                // Apply current parameter targets
-                applyAllParameters();
-
-                isRunning = true;
-                btnStart.textContent = '■ Stop';
-                btnStart.classList.add('running');
-                stateLabel.textContent = '— emerging soundscape —';
-                stateLabel.style.color = '#c8c8e0';
-
-                // Start visualization
-                animateVisualizer();
-
-                // Start event system
-                scheduleNextEvent();
+            toggleEngine() {
+                if (this.isRunning) this.stopEngine();
+                else this.startEngine();
             }
 
-            function stopEngine() {
-                if (!isRunning) return;
+            startEngine() {
+                if (!this.audioCtx) this.audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                if (this.audioCtx.state === 'suspended') this.audioCtx.resume();
 
-                // Stop all sources
-                for (const src of noiseSources) {
-                    try { src.stop(0); } catch (e) { /* already stopped */ }
-                }
-                // Stop all LFOs
-                for (const lfo of lfoOscillators) {
-                    try { lfo.stop(0); } catch (e) { /* already stopped */ }
-                }
+                this.nodes = this.buildAudioGraph(this.audioCtx);
+                this.applyParameters();
 
-                // Disconnect and clean up
-                for (const node of activeNodes) {
-                    try { node.disconnect(); } catch (e) { /* ignore */ }
-                }
-                for (const rev of reverbNodes) {
-                    if (rev && rev.cleanup) rev.cleanup();
-                }
-                if (analyser) {
-                    try { analyser.disconnect(); } catch (e) { /* ignore */ }
-                }
+                // Fade In over 2 seconds
+                const now = this.audioCtx.currentTime;
+                this.nodes.masterGain.gain.cancelScheduledValues(now);
+                this.nodes.masterGain.gain.setValueAtTime(0, now);
+                this.nodes.masterGain.gain.linearRampToValueAtTime(this.params.volume * 0.7, now + 2.0);
 
-                activeNodes = [];
-                lfoOscillators = [];
-                noiseSources = [];
-                reverbNodes = [];
-                masterGain = null;
-                reverbGain = null;
-                analyser = null;
-                analyserData = null;
-                window._soundscapeLayerGains = null;
-                window._soundscapeLayerFilters = null;
-                window._soundscapeLfoGains = null;
-                window._soundscapeSendGains = null;
-                window._soundscapeDryMix = null;
-                window._soundscapeReverbGain = null;
-                window._soundscapeMasterGain = null;
+                this.isRunning = true;
+                this.ui.btnStart.textContent = '■ Stop';
+                this.ui.btnStart.classList.add('running');
+                this.ui.stateLabel.textContent = '— emerging soundscape —';
+                this.ui.stateLabel.style.color = '#c8c8e0';
 
-                if (animationId) {
-                    cancelAnimationFrame(animationId);
-                    animationId = null;
-                }
-
-                // Clear any pending events
-                if (window._soundscapeEventTimeout) {
-                    clearTimeout(window._soundscapeEventTimeout);
-                    window._soundscapeEventTimeout = null;
-                }
-
-                isRunning = false;
-                btnStart.textContent = '▶ Begin';
-                btnStart.classList.remove('running');
-                stateLabel.textContent = '— silent —';
-                stateLabel.style.color = '#8888a0';
-                slowPhaseAccum = 0;
-                currentStateName = '';
-
-                // Clear canvas
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                this.animateVisualizer();
+                this.scheduleNextEvent();
             }
 
-            function toggleEngine() {
-                if (isRunning) {
-                    stopEngine();
+            stopEngine() {
+                if (!this.isRunning) return;
+                const now = this.audioCtx.currentTime;
+
+                // Fade Out over 1.5 seconds
+                this.nodes.masterGain.gain.cancelScheduledValues(now);
+                this.nodes.masterGain.gain.setValueAtTime(this.nodes.masterGain.gain.value, now);
+                this.nodes.masterGain.gain.linearRampToValueAtTime(0, now + 1.5);
+
+                this.isRunning = false;
+                this.ui.btnStart.textContent = '▶ Begin';
+                this.ui.btnStart.classList.remove('running');
+                this.ui.stateLabel.textContent = '— silent —';
+                this.ui.stateLabel.style.color = '#8888a0';
+
+                // Stop nodes after fade out completes
+                setTimeout(() => {
+                    if(this.nodes.src1) { try { this.nodes.src1.stop(0); } catch(e){} }
+                    if(this.nodes.src2) { try { this.nodes.src2.stop(0); } catch(e){} }
+                    if(this.nodes.src3) { try { this.nodes.src3.stop(0); } catch(e){} }
+                    // Disconnect all to free memory
+                    Object.values(this.nodes).forEach(node => { if(node && node.disconnect) node.disconnect(); });
+                    this.nodes = {};
+                    if(this.animFrameId) cancelAnimationFrame(this.animFrameId);
+                    if(this.eventTimeout) clearTimeout(this.eventTimeout);
+                }, 1600);
+            }
+
+            // ─────────────────────────────────────
+            // RECORDING (MediaRecorder API)
+            // ─────────────────────────────────────
+            toggleRecording() {
+                if (!this.isRunning) return;
+                if (!this.isRecording) {
+                    const dest = this.audioCtx.createMediaStreamDestination();
+                    this.nodes.masterGain.connect(dest);
+                    this.mediaRecorder = new MediaRecorder(dest.stream);
+                    this.recordedChunks = [];
+                    
+                    this.mediaRecorder.ondataavailable = (e) => this.recordedChunks.push(e.data);
+                    this.mediaRecorder.onstop = () => {
+                        const blob = new Blob(this.recordedChunks, { type: 'audio/webm' });
+                        const url = URL.createObjectURL(blob);
+                        const a = document.createElement('a');
+                        a.href = url; a.download = `soundscape-${Date.now()}.webm`; a.click();
+                        URL.revokeObjectURL(url);
+                    };
+                    this.mediaRecorder.start();
+                    this.isRecording = true;
+                    this.ui.btnRecord.classList.add('recording');
+                    this.ui.btnRecord.textContent = '■ Stop Rec';
                 } else {
-                    startEngine();
+                    this.mediaRecorder.stop();
+                    this.isRecording = false;
+                    this.ui.btnRecord.classList.remove('recording');
+                    this.ui.btnRecord.textContent = '⏺ Record';
                 }
             }
 
             // ─────────────────────────────────────
-            // PARAMETER APPLICATION
+            // PARAMETER SMOOTHING & APPLICATION
             // ─────────────────────────────────────
-            function applyAllParameters() {
-                if (!isRunning) return;
-                const lg = window._soundscapeLayerGains;
-                const lf = window._soundscapeLayerFilters;
-                const lfoG = window._soundscapeLfoGains;
-                const sg = window._soundscapeSendGains;
-                const dry = window._soundscapeDryMix;
-                const rG = window._soundscapeReverbGain;
-                const mG = window._soundscapeMasterGain;
+            applyParameters() {
+                if (!this.isRunning || !this.nodes.masterGain) return;
+                const t = this.audioCtx.currentTime;
+                const timeConstant = 0.1; // Native Web Audio smoothing
 
-                const vol = currentVolume;
-                const dens = currentDensity;
-                const mov = currentMovement;
-                const rev = currentReverb;
+                this.nodes.masterGain.gain.setTargetAtTime(this.params.volume * 0.7, t, timeConstant);
 
-                // Master volume
-                if (mG) mG.gain.value = vol * 0.7;
+                // Density
+                this.nodes.gain1.gain.setTargetAtTime(0.25 + this.params.density * 0.45, t, timeConstant);
+                this.nodes.gain2.gain.setTargetAtTime(0.10 + this.params.density * 0.40, t, timeConstant);
+                this.nodes.gain3.gain.setTargetAtTime(0.05 + this.params.density * 0.30, t, timeConstant);
 
-                // Density: scales layer gains
-                if (lg && lg.length >= 3) {
-                    lg[0].gain.value = 0.25 + dens * 0.45; // deep layer
-                    lg[1].gain.value = 0.10 + dens * 0.40; // mid layer
-                    lg[2].gain.value = 0.05 + dens * 0.30; // air layer
-                }
+                // Movement (LFO Depths)
+                this.nodes.lfo1.gain.gain.setTargetAtTime(25 + this.params.movement * 100, t, timeConstant);
+                this.nodes.lfo2.gain.gain.setTargetAtTime(150 + this.params.movement * 700, t, timeConstant);
+                this.nodes.lfo3.gain.gain.setTargetAtTime(600 + this.params.movement * 2800, t, timeConstant);
+                this.nodes.lfoAmp1.gain.gain.setTargetAtTime(this.params.movement * 0.22, t, timeConstant);
+                this.nodes.lfoQ2.gain.gain.setTargetAtTime(this.params.movement * 1.6, t, timeConstant);
+                this.nodes.lfoTrem3.gain.gain.setTargetAtTime(this.params.movement * 0.12, t, timeConstant);
 
-                // Movement: scales LFO depths
-                if (lfoG && lfoG.length >= 7) {
-                    lfoG[0].gain.value = 25 + mov * 100; // filter 1 LFO depth
-                    lfoG[1].gain.value = 150 + mov * 700; // filter 2 LFO depth
-                    lfoG[2].gain.value = 600 + mov * 2800; // filter 3 LFO depth
-                    lfoG[3].gain.value = mov * 0.22; // amp mod depth layer 1
-                    lfoG[4].gain.value = mov * 1.6; // Q mod depth
-                    lfoG[5].gain.value = mov * 0.12; // tremolo depth
-                    lfoG[6].gain.value = mov * 0.16; // master LFO depth
-                }
-
-                // Reverb amount
-                if (sg && sg.length >= 3 && rG) {
-                    const rSend = rev * 0.9;
-                    sg[0].gain.value = rSend * 0.7;
-                    sg[1].gain.value = rSend * 0.85;
-                    sg[2].gain.value = rSend * 1.0;
-                    rG.gain.value = rev * 1.1;
-                }
-
-                // Dry mix adjustment
-                if (dry) {
-                    dry.gain.value = 1.0 - rev * 0.5;
-                }
-
-                // Adjust filter base frequencies slightly based on density
-                if (lf && lf.length >= 3) {
-                    // Layer 1: deeper with more density
-                    // Layer 2: wider with more density
-                    // Layer 3: brighter with more density
-                    // (Keep base freqs but they're modulated by LFOs)
-                }
-            }
-
-            function smoothParameters() {
-                const smoothing = 0.04;
-                currentVolume += (targetVolume - currentVolume) * smoothing;
-                currentDensity += (targetDensity - currentDensity) * smoothing;
-                currentMovement += (targetMovement - currentMovement) * smoothing;
-                currentReverb += (targetReverb - currentReverb) * smoothing;
-
-                if (isRunning && (Math.abs(targetVolume - currentVolume) > 0.001 ||
-                        Math.abs(targetDensity - currentDensity) > 0.001 ||
-                        Math.abs(targetMovement - currentMovement) > 0.001 ||
-                        Math.abs(targetReverb - currentReverb) > 0.001)) {
-                    applyAllParameters();
-                }
-
-                if (isRunning) {
-                    requestAnimationFrame(() => {
-                        smoothParameters();
-                    });
-                }
+                // Reverb
+                const rSend = this.params.reverb * 0.9;
+                this.nodes.send1.gain.setTargetAtTime(rSend * 0.7, t, timeConstant);
+                this.nodes.send2.gain.setTargetAtTime(rSend * 0.85, t, timeConstant);
+                this.nodes.send3.gain.setTargetAtTime(rSend * 1.0, t, timeConstant);
+                this.nodes.reverbGain.gain.setTargetAtTime(this.params.reverb * 1.1, t, timeConstant);
+                this.nodes.dryMix.gain.setTargetAtTime(1.0 - this.params.reverb * 0.5, t, timeConstant);
             }
 
             // ─────────────────────────────────────
-            // EVENT SYSTEM (structural changes)
+            // STOCHASTIC EVENTS
             // ─────────────────────────────────────
-            function scheduleNextEvent() {
-                if (!isRunning) return;
-                const interval = 35000 + Math.random() * 55000; // 35-90 seconds
-                window._soundscapeEventTimeout = setTimeout(() => {
-                    if (!isRunning) return;
-                    triggerEvent();
-                    scheduleNextEvent();
+            scheduleNextEvent() {
+                if (!this.isRunning) return;
+                const interval = 35000 + Math.random() * 55000;
+                this.eventTimeout = setTimeout(() => {
+                    if (!this.isRunning) return;
+                    this.triggerEvent();
+                    this.scheduleNextEvent();
                 }, interval);
             }
 
-            function triggerEvent() {
-                if (!isRunning) return;
+            triggerEvent() {
+                const t = this.audioCtx.currentTime;
                 const eventType = Math.floor(Math.random() * 5);
-                const lg = window._soundscapeLayerGains;
-                const lf = window._soundscapeLayerFilters;
-                const lfoG = window._soundscapeLfoGains;
-                const sg = window._soundscapeSendGains;
-                const rG = window._soundscapeReverbGain;
-
+                
                 switch (eventType) {
-                    case 0: // Brief reverb swell
-                        if (rG && sg && sg.length >= 3) {
-                            const origR = rG.gain.value;
-                            const origS = sg.map(s => s.gain.value);
-                            rG.gain.setTargetAtTime(Math.min(origR * 2.5, 0.7), audioCtx.currentTime, 1.5);
-                            for (const s of sg) s.gain.setTargetAtTime(s.gain.value * 2.0, audioCtx.currentTime,
-                                1.5);
-                            setTimeout(() => {
-                                if (!isRunning || !rG) return;
-                                rG.gain.setTargetAtTime(origR, audioCtx.currentTime, 4.0);
-                                for (let i = 0; i < sg.length; i++)
-                                    sg[i].gain.setTargetAtTime(origS[i], audioCtx.currentTime, 4.0);
-                            }, 4000);
-                        }
-                        stateLabel.textContent = '— spatial expansion —';
-                        stateLabel.style.color = '#b8c8e8';
+                    case 0: // Reverb swell
+                        this.nodes.reverbGain.gain.setTargetAtTime(Math.min(this.nodes.reverbGain.gain.value * 2.5, 0.7), t, 1.5);
+                        setTimeout(() => this.applyParameters(), 4000); // Return to normal
+                        this.ui.stateLabel.textContent = '— spatial expansion —';
                         break;
                     case 1: // Deep layer intensifies
-                        if (lg && lg[0]) {
-                            const orig = lg[0].gain.value;
-                            lg[0].gain.setTargetAtTime(Math.min(orig * 1.8, 0.7), audioCtx.currentTime, 2.0);
-                            setTimeout(() => {
-                                if (!isRunning || !lg || !lg[0]) return;
-                                lg[0].gain.setTargetAtTime(orig, audioCtx.currentTime, 6.0);
-                            }, 5000);
-                        }
-                        stateLabel.textContent = '— deepening resonance —';
-                        stateLabel.style.color = '#d8b878';
+                        this.nodes.gain1.gain.setTargetAtTime(Math.min(this.nodes.gain1.gain.value * 1.8, 0.7), t, 2.0);
+                        setTimeout(() => this.applyParameters(), 5000);
+                        this.ui.stateLabel.textContent = '— deepening resonance —';
                         break;
                     case 2: // Sparkle layer brightens
-                        if (lf && lf[2]) {
-                            const orig = lf[2].frequency.value;
-                            lf[2].frequency.setTargetAtTime(orig * 0.55, audioCtx.currentTime, 1.8);
-                            setTimeout(() => {
-                                if (!isRunning || !lf || !lf[2]) return;
-                                lf[2].frequency.setTargetAtTime(orig, audioCtx.currentTime, 5.0);
-                            }, 3500);
-                        }
-                        stateLabel.textContent = '— crystalline shimmer —';
-                        stateLabel.style.color = '#c8c0f0';
+                        this.nodes.hp3.frequency.setTargetAtTime(this.nodes.hp3.frequency.value * 0.55, t, 1.8);
+                        setTimeout(() => this.nodes.hp3.frequency.setTargetAtTime(4200, t, 2.0), 3500);
+                        this.ui.stateLabel.textContent = '— crystalline shimmer —';
                         break;
                     case 3: // Mid texture shift
-                        if (lf && lf[1]) {
-                            const orig = lf[1].frequency.value;
-                            const newFreq = orig * (0.5 + Math.random() * 1.5);
-                            lf[1].frequency.setTargetAtTime(newFreq, audioCtx.currentTime, 3.0);
-                        }
-                        stateLabel.textContent = '— shifting currents —';
-                        stateLabel.style.color = '#a8c8c8';
+                        const newFreq = 1100 * (0.5 + Math.random() * 1.5);
+                        this.nodes.bp2.frequency.setTargetAtTime(newFreq, t, 3.0);
+                        this.ui.stateLabel.textContent = '— shifting currents —';
                         break;
-                    case 4: // Movement intensifies briefly
-                        if (lfoG && lfoG.length >= 6) {
-                            const origDepths = lfoG.slice(0, 6).map(g => g.gain.value);
-                            for (let i = 0; i < 6; i++) {
-                                lfoG[i].gain.setTargetAtTime(origDepths[i] * 1.7, audioCtx.currentTime, 1.5);
-                            }
-                            setTimeout(() => {
-                                if (!isRunning || !lfoG) return;
-                                for (let i = 0; i < 6; i++) {
-                                    if (lfoG[i]) lfoG[i].gain.setTargetAtTime(origDepths[i], audioCtx
-                                        .currentTime, 5.0);
-                                }
-                            }, 6000);
-                        }
-                        stateLabel.textContent = '— undulating motion —';
-                        stateLabel.style.color = '#d0c0a0';
+                    case 4: // Movement intensifies
+                        const origMovement = this.params.movement;
+                        this.params.movement = Math.min(1.0, origMovement * 1.7);
+                        this.applyParameters();
+                        setTimeout(() => { this.params.movement = origMovement; this.applyParameters(); }, 6000);
+                        this.ui.stateLabel.textContent = '— undulating motion —';
                         break;
                 }
 
                 // Reset label after a while
                 setTimeout(() => {
-                    if (isRunning && stateLabel.textContent.indexOf('—') === 0 &&
-                        stateLabel.textContent.indexOf('soundscape') === -1) {
-                        stateLabel.textContent = '— evolving soundscape —';
-                        stateLabel.style.color = '#c8c8e0';
+                    if (this.isRunning) {
+                        this.ui.stateLabel.textContent = '— evolving soundscape —';
+                        this.ui.stateLabel.style.color = '#c8c8e0';
                     }
                 }, 12000);
             }
 
             // ─────────────────────────────────────
-            // VISUALIZER
+            // PRESETS
             // ─────────────────────────────────────
-            function resizeCanvas() {
-                const rect = canvas.parentElement.getBoundingClientRect();
-                const dpr = window.devicePixelRatio || 1;
-                const w = rect.width * dpr;
-                const h = rect.height * dpr;
-                if (canvas.width !== w || canvas.height !== h) {
-                    canvas.width = w;
-                    canvas.height = h;
+            applyPreset(name) {
+                const presets = {
+                    deep: { volume: 0.55, density: 0.75, movement: 0.30, reverb: 0.45, desc: '— oceanic depths —' },
+                    wind: { volume: 0.50, density: 0.50, movement: 0.70, reverb: 0.25, desc: '— windswept tundra —' },
+                    crystal: { volume: 0.45, density: 0.40, movement: 0.55, reverb: 0.50, desc: '— crystalline frost —' },
+                    experimental: { volume: 0.60, density: 0.60, movement: 0.85, reverb: 0.55, desc: '— experimental drift —' }
+                };
+                const p = presets[name];
+                if (!p) return;
+
+                this.params = { volume: p.volume, density: p.density, movement: p.movement, reverb: p.reverb };
+                this.ui.sliderVolume.value = Math.round(p.volume * 100);
+                this.ui.sliderDensity.value = Math.round(p.density * 100);
+                this.ui.sliderMovement.value = Math.round(p.movement * 100);
+                this.ui.sliderReverb.value = Math.round(p.reverb * 100);
+
+                if (this.isRunning) {
+                    this.applyParameters();
+                    this.ui.stateLabel.textContent = p.desc;
+                    this.ui.stateLabel.style.color = '#d8d0e8';
+                    setTimeout(() => {
+                        if (this.isRunning) {
+                            this.ui.stateLabel.textContent = '— evolving soundscape —';
+                            this.ui.stateLabel.style.color = '#c8c8e0';
+                        }
+                    }, 8000);
                 }
             }
 
-            function animateVisualizer() {
-                if (!isRunning) {
-                    animationId = null;
-                    return;
-                }
-                animationId = requestAnimationFrame(animateVisualizer);
-
-                resizeCanvas();
-                const w = canvas.width;
-                const h = canvas.height;
+            // ─────────────────────────────────────
+            // VISUALIZER
+            // ─────────────────────────────────────
+            resizeCanvas() {
+                const rect = this.ui.canvas.parentElement.getBoundingClientRect();
                 const dpr = window.devicePixelRatio || 1;
+                this.ui.canvas.width = rect.width * dpr;
+                this.ui.canvas.height = rect.height * dpr;
+            }
 
-                if (!analyser || !analyserData) return;
-                analyser.getFloatFrequencyData(analyserData);
-                const bins = analyserData; // length = fftSize/2 = 1024
+            drawIdleVisual() {
+                const { ctx, canvas } = this.ui;
+                const w = canvas.width, h = canvas.height;
+                ctx.fillStyle = 'rgba(10,10,18,1)'; ctx.fillRect(0, 0, w, h);
+                const cx = w / 2, cy = h / 2;
+                const r = Math.min(w, h) * 0.12;
+                const grad = ctx.createRadialGradient(cx, cy, r * 0.2, cx, cy, r);
+                grad.addColorStop(0, 'rgba(80,60,100,0.5)'); grad.addColorStop(1, 'rgba(10,10,18,0)');
+                ctx.fillStyle = grad; ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2); ctx.fill();
+            }
+
+            animateVisualizer() {
+                if (!this.isRunning) return;
+                this.animFrameId = requestAnimationFrame(() => this.animateVisualizer());
+
+                const { ctx, canvas } = this.ui;
+                const w = canvas.width, h = canvas.height;
+                const dpr = window.devicePixelRatio || 1;
+                const analyser = this.nodes.analyser;
+                if (!analyser) return;
+
+                const bins = new Float32Array(analyser.frequencyBinCount);
+                analyser.getFloatFrequencyData(bins);
 
                 ctx.clearRect(0, 0, w, h);
 
-                // ── Background glow ──
+                // Background glow
                 const totalEnergy = bins.reduce((a, v) => a + Math.max(0, (v + 90) / 90), 0) / bins.length;
                 const glowAlpha = 0.06 + totalEnergy * 0.12;
                 const bgGrad = ctx.createRadialGradient(w / 2, h / 2, w * 0.05, w / 2, h / 2, w * 0.75);
                 bgGrad.addColorStop(0, `rgba(60,40,80,${glowAlpha * 1.5})`);
-                bgGrad.addColorStop(0.5, `rgba(30,25,50,${glowAlpha})`);
                 bgGrad.addColorStop(1, 'rgba(10,10,18,0)');
-                ctx.fillStyle = bgGrad;
-                ctx.fillRect(0, 0, w, h);
+                ctx.fillStyle = bgGrad; ctx.fillRect(0, 0, w, h);
 
-                // ── Radial spectrum ──
-                const cx = w / 2;
-                const cy = h / 2;
+                // Radial Spectrum
+                const cx = w / 2, cy = h / 2;
                 const maxRadius = Math.min(w, h) * 0.44;
                 const innerRadius = maxRadius * 0.18;
                 const numBars = 200;
                 const binsPerBar = Math.floor(bins.length / numBars);
 
-                // Draw radial bars
                 for (let i = 0; i < numBars; i++) {
-                    const startBin = i * binsPerBar;
                     let sum = 0;
-                    const count = Math.min(binsPerBar, bins.length - startBin);
-                    for (let j = 0; j < count; j++) {
-                        const val = bins[startBin + j];
-                        sum += Math.max(0, (val + 90) / 90); // normalize: -90dB→0, -10dB→~0.89
-                    }
-                    const avg = sum / count;
-                    const normalizedVal = Math.min(1, avg);
-
+                    for (let j = 0; j < binsPerBar; j++) sum += Math.max(0, (bins[i * binsPerBar + j] + 90) / 90);
+                    const normalizedVal = Math.min(1, sum / binsPerBar);
                     const angle = (i / numBars) * Math.PI * 2 - Math.PI / 2;
                     const barLength = innerRadius + normalizedVal * (maxRadius - innerRadius);
 
@@ -993,276 +624,30 @@
                     const x2 = cx + Math.cos(angle) * barLength;
                     const y2 = cy + Math.sin(angle) * barLength;
 
-                    // Color based on frequency and magnitude
                     const freqRatio = i / numBars;
                     let r, g, b;
-                    if (freqRatio < 0.25) {
-                        // Low: warm amber to deep orange
-                        const t = freqRatio / 0.25;
-                        r = 220 + t * 30;
-                        g = 120 + t * 60;
-                        b = 40 + t * 30;
-                    } else if (freqRatio < 0.6) {
-                        // Mid: warm to cool transition
-                        const t = (freqRatio - 0.25) / 0.35;
-                        r = 250 - t * 160;
-                        g = 180 - t * 60;
-                        b = 70 + t * 110;
-                    } else {
-                        // High: cool blues and violets
-                        const t = (freqRatio - 0.6) / 0.4;
-                        r = 90 - t * 50;
-                        g = 120 - t * 60;
-                        b = 180 + t * 60;
-                    }
+                    if (freqRatio < 0.3) { r = 220; g = 120; b = 40; } // Amber
+                    else if (freqRatio < 0.6) { r = 150; g = 120; b = 180; } // Purple transition
+                    else { r = 90; g = 120; b = 220; } // Blue
 
-                    const alpha = 0.35 + normalizedVal * 0.65;
-                    const glowAmount = normalizedVal * 0.6;
-
-                    // Draw bar
-                    ctx.beginPath();
-                    ctx.moveTo(x1, y1);
-                    ctx.lineTo(x2, y2);
-                    ctx.strokeStyle = `rgba(${Math.round(r)},${Math.round(g)},${Math.round(b)},${alpha})`;
-                    ctx.lineWidth = 1.8 * dpr;
-                    ctx.lineCap = 'round';
-                    ctx.stroke();
-
-                    // Glow on brighter bars
-                    if (normalizedVal > 0.4) {
-                        ctx.beginPath();
-                        ctx.moveTo(x1, y1);
-                        ctx.lineTo(x2, y2);
-                        ctx.strokeStyle =
-                            `rgba(${Math.round(r)},${Math.round(g)},${Math.round(b)},${glowAmount * 0.5})`;
-                        ctx.lineWidth = 5 * dpr;
-                        ctx.stroke();
-                    }
+                    ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2);
+                    ctx.strokeStyle = `rgba(${r},${g},${b},${0.3 + normalizedVal * 0.7})`;
+                    ctx.lineWidth = 1.8 * dpr; ctx.lineCap = 'round'; ctx.stroke();
                 }
 
-                // ── Center orb ──
-                const lowEnergy = bins.slice(0, 40).reduce((a, v) => a + Math.max(0, (v + 90) / 90), 0) / 40;
-                const orbRadius = maxRadius * 0.10 + lowEnergy * maxRadius * 0.14;
+                // Center Orb
+                const orbRadius = maxRadius * 0.10 + totalEnergy * maxRadius * 0.14;
                 const orbGrad = ctx.createRadialGradient(cx, cy, orbRadius * 0.3, cx, cy, orbRadius);
-                const orbHue = 30 + totalEnergy * 40; // shifts with energy
-                orbGrad.addColorStop(0, `hsla(${orbHue},60%,70%,0.9)`);
-                orbGrad.addColorStop(0.5, `hsla(${orbHue},50%,40%,0.5)`);
+                orbGrad.addColorStop(0, `hsla(${30 + totalEnergy * 40},60%,70%,0.9)`);
                 orbGrad.addColorStop(1, 'rgba(20,15,30,0)');
-                ctx.fillStyle = orbGrad;
-                ctx.beginPath();
-                ctx.arc(cx, cy, orbRadius, 0, Math.PI * 2);
-                ctx.fill();
-
-                // ── Subtle particles ──
-                const particleCount = 18;
-                for (let p = 0; p < particleCount; p++) {
-                    const seed = p * 37.791 + slowPhaseAccum * 0.3;
-                    const angle = (seed % (Math.PI * 2));
-                    const dist = innerRadius + (Math.sin(seed * 1.7 + slowPhaseAccum * 0.02) * 0.5 + 0.5) * (maxRadius -
-                        innerRadius) * 0.9;
-                    const px = cx + Math.cos(angle) * dist;
-                    const py = cy + Math.sin(angle) * dist;
-                    const pAlpha = 0.15 + (Math.sin(seed * 3.1 + slowPhaseAccum * 0.04) * 0.5 + 0.5) * 0.5;
-                    ctx.fillStyle = `rgba(200,200,230,${pAlpha})`;
-                    ctx.beginPath();
-                    ctx.arc(px, py, 1.5 * dpr, 0, Math.PI * 2);
-                    ctx.fill();
-                }
-
-                // Update slow phase for label tracking
-                slowPhaseAccum += 0.003;
-                updateStateLabel(totalEnergy, lowEnergy);
+                ctx.fillStyle = orbGrad; ctx.beginPath(); ctx.arc(cx, cy, orbRadius, 0, Math.PI * 2); ctx.fill();
             }
+        }
 
-            function updateStateLabel(totalEnergy, lowEnergy) {
-                if (!isRunning) return;
-                // Only update occasionally
-                if (Math.floor(slowPhaseAccum * 10) % 17 !== 0 && currentStateName !== '') return;
-
-                let newName = '';
-                if (lowEnergy > 0.55 && totalEnergy > 0.4) {
-                    newName = '— subterranean resonance —';
-                } else if (lowEnergy > 0.45 && totalEnergy < 0.35) {
-                    newName = '— deep quietude —';
-                } else if (totalEnergy > 0.5 && lowEnergy < 0.35) {
-                    newName = '— windswept expanse —';
-                } else if (totalEnergy > 0.35 && lowEnergy < 0.3) {
-                    newName = '— crystalline aether —';
-                } else if (totalEnergy < 0.25) {
-                    newName = '— sparse drift —';
-                } else {
-                    newName = '— harmonic convergence —';
-                }
-
-                if (newName !== currentStateName && stateLabel.textContent.indexOf('—') === 0 &&
-                    stateLabel.textContent.indexOf('soundscape') === -1 &&
-                    stateLabel.textContent.indexOf('expansion') === -1 &&
-                    stateLabel.textContent.indexOf('resonance') === -1 &&
-                    stateLabel.textContent.indexOf('shimmer') === -1 &&
-                    stateLabel.textContent.indexOf('currents') === -1 &&
-                    stateLabel.textContent.indexOf('motion') === -1) {
-                    currentStateName = newName;
-                    stateLabel.textContent = newName;
-                    stateLabel.style.color = '#c8c8e0';
-                }
-                if (currentStateName === '') {
-                    currentStateName = newName;
-                    if (stateLabel.textContent.indexOf('—') !== 0 || stateLabel.textContent === '— silent —') {
-                        stateLabel.textContent = newName;
-                    }
-                }
-            }
-
-            // ─────────────────────────────────────
-            // PRESETS
-            // ─────────────────────────────────────
-            const presets = {
-                deep: { volume: 0.55, density: 0.75, movement: 0.30, reverb: 0.45,
-                    desc: '— oceanic depths —' },
-                wind: { volume: 0.50, density: 0.50, movement: 0.70, reverb: 0.25,
-                desc: '— windswept tundra —' },
-                crystal: { volume: 0.45, density: 0.40, movement: 0.55, reverb: 0.50,
-                    desc: '— crystalline frost —' },
-                experimental: { volume: 0.60, density: 0.60, movement: 0.85, reverb: 0.55,
-                    desc: '— experimental drift —' },
-            };
-
-            function applyPreset(name) {
-                const p = presets[name];
-                if (!p) return;
-                targetVolume = p.volume;
-                targetDensity = p.density;
-                targetMovement = p.movement;
-                targetReverb = p.reverb;
-                sliderVolume.value = Math.round(p.volume * 100);
-                sliderDensity.value = Math.round(p.density * 100);
-                sliderMovement.value = Math.round(p.movement * 100);
-                sliderReverb.value = Math.round(p.reverb * 100);
-
-                if (isRunning) {
-                    stateLabel.textContent = p.desc;
-                    stateLabel.style.color = '#d8d0e8';
-                    currentStateName = p.desc;
-                    setTimeout(() => {
-                        if (isRunning && stateLabel.textContent === p.desc) {
-                            stateLabel.textContent = '— evolving soundscape —';
-                            stateLabel.style.color = '#c8c8e0';
-                            currentStateName = '— evolving soundscape —';
-                        }
-                    }, 8000);
-                }
-            }
-
-            // ─────────────────────────────────────
-            // EVENT LISTENERS
-            // ─────────────────────────────────────
-            btnStart.addEventListener('click', toggleEngine);
-
-            sliderVolume.addEventListener('input', () => {
-                targetVolume = parseInt(sliderVolume.value) / 100;
-                if (!isRunning) currentVolume = targetVolume;
-            });
-            sliderDensity.addEventListener('input', () => {
-                targetDensity = parseInt(sliderDensity.value) / 100;
-                if (!isRunning) currentDensity = targetDensity;
-            });
-            sliderMovement.addEventListener('input', () => {
-                targetMovement = parseInt(sliderMovement.value) / 100;
-                if (!isRunning) currentMovement = targetMovement;
-            });
-            sliderReverb.addEventListener('input', () => {
-                targetReverb = parseInt(sliderReverb.value) / 100;
-                if (!isRunning) currentReverb = targetReverb;
-            });
-
-            presetButtons.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const presetName = btn.dataset.preset;
-                    if (presetName) applyPreset(presetName);
-                });
-            });
-
-            // Keyboard shortcut: Space to toggle
-            document.addEventListener('keydown', (e) => {
-                if (e.code === 'Space' && e.target === document.body) {
-                    e.preventDefault();
-                    toggleEngine();
-                }
-                if (e.code === 'KeyD' && !e.ctrlKey && !e.metaKey) applyPreset('deep');
-                if (e.code === 'KeyW' && !e.ctrlKey && !e.metaKey) applyPreset('wind');
-                if (e.code === 'KeyC' && !e.ctrlKey && !e.metaKey) applyPreset('crystal');
-                if (e.code === 'KeyE' && !e.ctrlKey && !e.metaKey) applyPreset('experimental');
-            });
-
-            // Handle page unload
-            window.addEventListener('beforeunload', () => {
-                if (isRunning) stopEngine();
-            });
-
-            // Handle visibility change (pause when tab hidden, optional)
-            document.addEventListener('visibilitychange', () => {
-                if (document.hidden && isRunning) {
-                    // Optionally reduce processing; we'll keep running for audio continuity
-                    // The audio continues in background which is fine for soundscapes
-                }
-            });
-
-            // ─────────────────────────────────────
-            // INITIALIZATION
-            // ─────────────────────────────────────
-            function init() {
-                resizeCanvas();
-                // Draw initial empty state on canvas
-                ctx.fillStyle = 'rgba(10,10,18,1)';
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-                const cx = canvas.width / 2;
-                const cy = canvas.height / 2;
-                const r = Math.min(canvas.width, canvas.height) * 0.12;
-                const grad = ctx.createRadialGradient(cx, cy, r * 0.2, cx, cy, r);
-                grad.addColorStop(0, 'rgba(80,60,100,0.5)');
-                grad.addColorStop(1, 'rgba(10,10,18,0)');
-                ctx.fillStyle = grad;
-                ctx.beginPath();
-                ctx.arc(cx, cy, r, 0, Math.PI * 2);
-                ctx.fill();
-
-                ctx.fillStyle = '#555570';
-                ctx.font = `${14 * (window.devicePixelRatio || 1)}px "Segoe UI", system-ui, sans-serif`;
-                ctx.textAlign = 'center';
-                ctx.fillText('press Begin or Space', cx, cy + r + 30 * (window.devicePixelRatio || 1));
-
-                // Start the parameter smoothing loop
-                smoothParameters();
-            }
-
-            window.addEventListener('resize', () => {
-                resizeCanvas();
-                if (!isRunning) {
-                    ctx.fillStyle = 'rgba(10,10,18,1)';
-                    ctx.fillRect(0, 0, canvas.width, canvas.height);
-                    const cx = canvas.width / 2;
-                    const cy = canvas.height / 2;
-                    const r = Math.min(canvas.width, canvas.height) * 0.12;
-                    const grad = ctx.createRadialGradient(cx, cy, r * 0.2, cx, cy, r);
-                    grad.addColorStop(0, 'rgba(80,60,100,0.5)');
-                    grad.addColorStop(1, 'rgba(10,10,18,0)');
-                    ctx.fillStyle = grad;
-                    ctx.beginPath();
-                    ctx.arc(cx, cy, r, 0, Math.PI * 2);
-                    ctx.fill();
-                }
-            });
-
-            init();
-
-            console.log('🌊 Soundscape Generator ready.');
-            console.log('   Press "Begin" or Space to start.');
-            console.log('   Presets: D=Deep, W=Wind, C=Crystal, E=Experimental');
-            console.log('   Layers: 3 noise sources (7.3s, 11.2s, 13.4s loops)');
-            console.log('   Combined pattern period: ~hours (prime-length buffers × irrational LFOs)');
-            console.log('   Structural events every 35-90 seconds.');
-            console.log('   Enjoy the evolving soundscape.');
-        })();
+        // Initialize
+        window.addEventListener('DOMContentLoaded', () => {
+            window.soundscape = new SoundscapeEngine();
+        });
     </script>
 </body>
 </html>
