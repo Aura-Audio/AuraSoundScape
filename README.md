@@ -44,6 +44,13 @@ Designed for focus, meditation, creative coding, and game audio prototyping, it 
 *   **True Schroeder Reverb:** A custom-built algorithmic reverb featuring parallel comb filters, feedback damping, and a master low-pass filter to eliminate metallic ringing.
 *   **Stochastic Structural Events:** Every 35–90 seconds, the engine autonomously triggers organic transformations (reverb swells, filter sweeps, density spikes) to keep the listener engaged without manual intervention.
 
+### 🎛️ Advanced DSP & Synthesis (v3.0)
+*   **Expanded Noise Palette:** Go beyond white noise. Select from mathematically generated **Pink** (Paul Kellet’s algorithm), **Brown**, **Blue** (differentiated), and **Violet** (second derivative) noise textures to sculpt the exact frequency profile of your environment.
+*   **Generative Drone Synth:** A dedicated fourth layer featuring a 3-oscillator detuned supersaw architecture feeding into a resonant low-pass filter. 
+    *   **Auto-Harmony:** The drone's root note automatically glides between quantized pentatonic intervals, ensuring it never clashes with the noise layers.
+    *   **Tension Control:** A dedicated "Resonance" macro allows you to push the drone filter from a soft pad to a screaming, acidic lead.
+*   **Dynamic Reverb Sizing:** The "Room Size" parameter now physically alters the delay line lengths within the Schroeder reverb topology, shifting the space from a tight closet to a massive cavern.
+
 ### 🎧 Real-Time Morphing Controls
 Four macro-parameters that smoothly reshape the entire audio graph:
 *   **Volume:** Master output level with native `setTargetAtTime` smoothing.
