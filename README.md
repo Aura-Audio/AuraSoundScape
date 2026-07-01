@@ -34,6 +34,36 @@ Designed for focus, meditation, creative coding, and game audio prototyping, it 
 
 ---
 
+```
+project/
+├── index.html
+├── css/
+│   └── styles.css
+├── js/
+│   ├── main.js                 # Initializes app and UI
+│   ├── audio/
+│   │   ├── AudioEngine.js       # Core audio engine
+│   │   ├── synthesis/
+│   │   │   ├── PolyphonicOscillator.js  # Polyphony
+│   │   │   ├── FMSynth.js              # FM Synthesis
+│   │   │   ├── GranularSynth.js         # Granular Synthesis
+│   │   │   ├── WavetableSynth.js        # Wavetable Synthesis
+│   │   │   └── SamplePlayer.js          # Sample Playback
+│   │   ├── control/
+│   │   │   ├── MIDIHandler.js           # MIDI Input
+│   │   │   ├── OSCHandler.js            # OSC Control
+│   │   │   ├── Arpeggiator.js           # Arpeggiator
+│   │   │   ├── Sequencer.js             # Sequencer
+│   │   │   ├── LFO.js                   # LFOs
+│   │   │   ├── EnvelopeFollower.js      # Envelope Followers
+│   │   │   └── AudioInput.js            # Audio Input
+│   │   └── utils/
+│   │       ├── scales.js               # Scales, chords, tuning
+│   │       └── helpers.js              # Utility functions
+└── README.md
+```
+
+
 ## ✨ Features
 
 ### 🎛️ Generative Audio Engine
