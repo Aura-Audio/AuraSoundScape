@@ -1,0 +1,11 @@
+{
+  "name": "aurasoundscape",
+  "version": "4.0.0",
+  "description": "A modular browser-based generative audio engine",
+  "type": "module",
+  "scripts": {
+    "start": "http-server -p 8080",
+    "dev": "vite"
+  },
+  "license": "MIT"
+}

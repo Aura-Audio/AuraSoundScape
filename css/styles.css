@@ -1,0 +1,89 @@
+:root {
+  --bg-deep: #050508;
+  --bg-surface: rgba(18, 18, 24, 0.6);
+  --bg-panel: rgba(25, 25, 35, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --text-main: #e2e8f0;
+  --accent-cyan: #00f0ff;
+}
+
+body {
+  background: var(--bg-deep);
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.panel {
+  background: var(--bg-panel);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid var(--glass-border);
+}
+
+.slider, .select {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  background: #1a1a24;
+  border: 1px solid #333;
+  border-radius: 6px;
+  color: var(--text-main);
+}
+
+.btn {
+  padding: 8px 16px;
+  background: var(--bg-surface);
+  border: 1px solid #333;
+  border-radius: 6px;
+  color: var(--text-main);
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+#visualizer {
+  width: 100%;
+  background: #000;
+  border-radius: 8px;
+}
+
+.virtual-keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.virtual-keyboard .key {
+  width: 40px;
+  height: 80px;
+  background: #1a1a24;
+  border: 1px solid #333;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.sequencer-grid {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  gap: 5px;
+}
+
+.sequencer-grid .step {
+  aspect-ratio: 1;
+  background: #1a1a24;
+  border: 1px solid #333;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.sequencer-grid .step.active {
+  background: var(--accent-cyan);
+}
