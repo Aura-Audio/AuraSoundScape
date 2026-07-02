@@ -1,18 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Soundscape v4.0 – Modular Audio Engine</title>
-  <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuraSoundScape – Modular Audio Engine</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="app-container">
-    <h1>Modular Audio Engine</h1>
-    <div id="keyboard"></div>
-    <div id="controls"></div>
-  </div>
-  <!-- Load modules -->
-  <script type="module" src="js/main.js"></script>
+    <div class="app-container">
+        <header class="header">
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <h1>AuraSoundScape</h1>
+            </div>
+            <nav class="nav">
+                <button id="save-project" class="btn">Save Project</button>
+                <button id="load-project" class="btn">Load Project</button>
+            </nav>
+        </header>
+        
+        <main class="main">
+            <section class="panel synth-panel">
+                <h2>Synth</h2>
+                <div class="control-group">
+                    <label for="synth-type">Synth Type</label>
+                    <select id="synth-type" class="select">
+                        <option value="polyphonic">Polyphonic</option>
+                        <option value="fm">FM Synth</option>
+                        <option value="granular">Granular</option>
+                        <option value="wavetable">Wavetable</option>
+                        <option value="sample">Sample Player</option>
+                    </select>
+                </div>
+            </section>
+            <section class="panel layer-panel">
+                <h2>Layers</h2>
+                <div class="layer-controls">
+                    <button id="add-layer" class="btn">+ Add Layer</button>
+                    <button id="remove-layer" class="btn">- Remove Layer</button>
+                </div>
+            </section>
+            <section class="panel arpeggiator-panel">
+                <h2>Arpeggiator</h2>
+                <div class="control-group">
+                    <label for="arpeggiator-mode">Mode</label>
+                    <select id="arpeggiator-mode" class="select">
+                        <option value="up">Up</option>
+                        <option value="down">Down</option>
+                        <option value="random">Random</option>
+                        <option value="upDown">Up/Down</option>
+                    </select>
+                </div>
+                <div class="arpeggiator-actions">
+                    <button id="arpeggiator-start" class="btn">Start</button>
+                    <button id="arpeggiator-stop" class="btn">Stop</button>
+                </div>
+            </section>
+            <section class="panel sequencer-panel">
+                <h2>Sequencer</h2>
+                <div class="control-group">
+                    <label for="sequencer-bpm">BPM</label>
+                    <input type="range" id="sequencer-bpm" class="slider" min="40" max="200" value="120">
+                </div>
+                <div class="sequencer-grid" id="sequencer-grid"></div>
+                <div class="sequencer-actions">
+                    <button id="sequencer-start" class="btn">Start</button>
+                    <button id="sequencer-stop" class="btn">Stop</button>
+                </div>
+            </section>
+            <section class="panel visualizer-panel">
+                <h2>Visualizer</h2>
+                <canvas id="visualizer" width="800" height="300"></canvas>
+            </section>
+            <section class="panel keyboard-panel">
+                <h2>Virtual Keyboard</h2>
+                <div id="virtual-keyboard" class="virtual-keyboard"></div>
+            </section>
+        </main>
+        <footer class="footer">
+            <p>Crafted with curiosity, mathematics, and a love for endless sound.</p>
+        </footer>
+    </div>
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>
